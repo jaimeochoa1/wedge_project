@@ -169,4 +169,6 @@ data/*
 # Except .gitkeep
 !data/.gitkeep
 
+*.code-workspace
+
 
