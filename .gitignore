@@ -144,3 +144,9 @@ data/*
 !data/.gitkeep
 
 *.code-workspace
+
+wedge_summary.db
+wedge_summary.zip
+wedge_summary.zip.part1
+wedge_summary.zip.part2
+bfg-1.14.0.jar
