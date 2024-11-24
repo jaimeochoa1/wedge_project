@@ -166,3 +166,6 @@ sampled_owners.txt
 # Optional: Ignore other temporary files or artifacts
 *.log
 *.tmp
+
+service_account_key.json
+
