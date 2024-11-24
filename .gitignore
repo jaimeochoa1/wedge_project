@@ -169,3 +169,25 @@ sampled_owners.txt
 
 service_account_key.json
 
+# Ignore all .zip files
+*.zip
+*.zip.part*
+
+# Ignore all .db files
+*.db
+
+# Ignore specific .txt files
+sampled_owners.txt
+
+# Ignore all .zip files
+*.zip
+
+# Ignore all split .zip files
+*.zip.part*
+
+# Ignore all .db files
+*.db
+
+# Ignore specific .txt files
+sampled_owners.txt
+
