@@ -150,3 +150,19 @@ wedge_summary.zip
 wedge_summary.zip.part1
 wedge_summary.zip.part2
 bfg-1.14.0.jar
+
+# Ignore the entire data directory
+data/
+
+# Ignore specific file types
+*.db
+*.zip
+*.part*
+
+# Ignore sensitive files
+service_account_key.json
+sampled_owners.txt
+
+# Optional: Ignore other temporary files or artifacts
+*.log
+*.tmp
