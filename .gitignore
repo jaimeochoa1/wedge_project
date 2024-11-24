@@ -191,3 +191,5 @@ sampled_owners.txt
 # Ignore specific .txt files
 sampled_owners.txt
 
+sampled_owners_250MB.txt
+
