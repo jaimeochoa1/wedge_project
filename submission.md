@@ -20,13 +20,47 @@ Results: [Download sampled_owners_250MB.txt](https://drive.google.com/file/d/1u9
 
 Task 3: Summary Tables and SQLite Database
 
-Description: Generated summary tables and saved them in an SQLite database:
-The summary tables include Sales by Date and Hour, which aggregates total sales, transactions, and item counts grouped by date and hour. Additionally, Sales by Owner by Year and Month provides a breakdown of sales and activity by owner, year, and month. Finally, Sales by Product Description by Year and Month tracks key sales metrics by product, year, and month.
+Description: Generated summary tables and saved them in BigQuery:
+- `sales-by-date-by-hour-table`: Aggregates total sales, transactions, and item counts grouped by date and hour.
+- `sales_by_owner_by_year_by_month_table`: Provides a breakdown of sales and activity by owner, year, and month.
+- `sales_by_product_by_year_by_month-table`: Tracks sales metrics by product, year, and month.
 
-Approach: Queried BigQuery for aggregated data.
-Stored results in an SQLite database (wedge_summary.db).
 
-Results: SQLite database: Available as a zip file split into smaller parts for upload.
+Approach: Queried BigQuery to aggregate data for the summary tables. Results were saved as tables in the BigQuery dataset (`umt-msba.wedge_project_ochoa`) for ease of access and further analysis.
+
+Results:
+sales-by-date-by-hour-table: Aggregates total sales, transactions, and item counts grouped by date and hour. Stored in umt-msba.wedge_project_ochoa.sales-by-date-by-hour-table.
+
+Observations: The sales_by_date_by_hour table contains 39,421 rows, representing the aggregation of sales data by date and hour for the entire time period covered in the dataset. The earliest date in the dataset is January 1, 2010, and the latest is January 31, 2017. This confirms that the table spans the expected date range and provides hourly granularity for each day.
+
+Validation Notes:
+Total Rows: The table contains 39,421 rows, which matches expectations based on the 7-year time frame and hourly aggregation.
+Date Range: Data spans from 2010-01-01 to 2017-01-31, confirming complete temporal coverage.
+
+Completeness: No apparent gaps in the date range, ensuring a continuous record of hourly sales activity.
+
+Results:
+sales_by_owner_by_year_by_month_table: Provides a breakdown of sales and activity by owner, year, and month. Stored in umt-msba.wedge_project_ochoa.sales_by_owner_by_year_by_month_table.
+
+Observations: The spot check for the sales_by_owner_by_year_by_month_table yielded 808,896 total rows, spanning from January 1, 2010, to January 1, 2017. This aligns with the expected duration of the dataset, covering the entire transactional history up to the end of the Wedge Project's analysis timeframe. The large number of rows suggests a comprehensive breakdown of sales and activity grouped by owner, year, and month, as intended by the query structure.
+
+Validation Notes: 
+Row Count: The high row count confirms the successful aggregation of data at the specified granularity (owner, year, month). Each row represents a unique combination of these dimensions.
+
+Date Range: The start_date and end_date match the timeframe of the Wedge Project data, indicating no missing periods.
+
+Query Accuracy: The use of PARSE_DATE to derive dates from year and month ensures correct validation of the date range. All observations fall within the expected limits, validating the integrity of the table creation process.
+
+Results:
+sales_by_product_by_year_by_month-table: Tracks sales metrics by product, year, and month. Stored in umt-msba.wedge_project_ochoa.sales_by_product_by_year_by_month-table.
+
+Observations: Row Count: The table contains a total of 1,269,425 rows, indicating a detailed breakdown of product sales metrics across years and months.
+
+Date Range: The data spans from 2010-01-01 to 2017-01-01, which aligns with the expected dataset time frame.
+
+Validation Notes:
+The total row count and date range are consistent with the expectations for this summary table.
+The summarized product sales data is accurate, with correct detail level and relevant metrics.
 
 Additional Notes: The SQLite database has been compressed and split due to size limitations.
 
