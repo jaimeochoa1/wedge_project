@@ -186,10 +186,12 @@ When calculating relative difference, use the formula
 
 ## Reflections
 
-<!-- I'd love to get 100-200 words on your experience doing the Wedge Project --> 
+The Wedge Project was both challenging and rewarding. It took quite a long time to complete, but I feel that I’ve learned so much throughout the process. Initially, I wasn’t a big fan of Google BigQuery, just as Python was not my favorite tool when I started working with it last spring. However, with practice, these tools have become more familiar, and Python is now one of my favorites to use. Tackling programs outside my comfort zone has been a valuable learning experience.
+
+One of the most satisfying moments was when something finally worked as intended—it made all the effort worth it. However, the data load process was by far the most frustrating part. It required hours of waiting, which was challenging for someone like me who lacks patience and juggles a busy work/life/school schedule. Despite these challenges, I’m grateful for the opportunity to work on this project and for the knowledge and skills I gained along the way.
 
 
-File Structure
+## File Structure
 
 Jupyter Notebook: Contains all code and documentation for tasks.
 wedge_project.ipynb
